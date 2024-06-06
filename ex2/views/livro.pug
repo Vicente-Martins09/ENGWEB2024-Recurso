@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .w3-card-4
+        header.w3-container.w3-teal
+            h1 Livro #{livro._id}
+
+        .w3-container
+            
+            if livro.coverImg
+                img(src=livro.coverImg, alt="Cover Image", style="max-width: 300px;")
+            
+            each val, key in livro
+                p
+                    strong #{key}: 
+                    |  #{val}
+
+        footer.w3-container.w3-teal
+            a(href="/") Voltar
+
+            
